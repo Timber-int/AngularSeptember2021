@@ -1,4 +1,4 @@
-export interface ICompany {
+export interface CompanyInterface {
   name: string;
   catchPhrase: string;
   bs: string;

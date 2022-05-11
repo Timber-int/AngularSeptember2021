@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {IPhoto} from '../models';
+import {Observable} from 'rxjs';
+
+import {PhotoInterface} from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +14,11 @@ export class PhotoService {
   constructor(private http: HttpClient) {
   }
 
-  getPhotos() {
-    return this.http.get<IPhoto[]>(this.url);
+  getPhotos(): Observable<PhotoInterface[]> {
+    return this.http.get<PhotoInterface[]>(this.url);
   }
 
-  getPhoto(id: number) {
-    return this.http.get<IPhoto>(this.url + '/' + id);
+  getPhoto(id: number): Observable<PhotoInterface> {
+    return this.http.get<PhotoInterface>(this.url + '/' + id);
   }
 }

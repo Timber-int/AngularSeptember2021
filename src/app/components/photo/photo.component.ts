@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IPhoto} from '../../models';
+
+import {PhotoInterface} from '../../models';
 
 @Component({
   selector: 'app-photo',
@@ -9,7 +10,7 @@ import {IPhoto} from '../../models';
 export class PhotoComponent implements OnInit {
 
   @Input()
-  photo: IPhoto;
+  photo: PhotoInterface;
 
   constructor() {
   }
