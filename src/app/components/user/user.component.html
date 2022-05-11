@@ -1,0 +1,26 @@
+<div class="user_box">
+  <p>{{user.id}}</p>
+  <p>{{user.name}}</p>
+  <p>{{user.username}}</p>
+  <p>{{user.email}}</p>
+  <p>address:</p>
+  <ul>
+    <li>{{user.address.street}}</li>
+    <li>{{user.address.suite}}</li>
+    <li>{{user.address.city}}</li>
+    <li>{{user.address.zipcode}}</li>
+   <p>geo:</p>
+    <ul>
+      <li>{{user.address.geo.lat}}</li>
+      <li>{{user.address.geo.lng}}</li>
+    </ul>
+  </ul>
+  <p>{{user.phone}}</p>
+ <p>{{user.website}}</p>
+ <p>company:</p>
+  <ul>
+    <li>{{user.company.name}}</li>
+    <li>{{user.company.catchPhrase}}</li>
+    <li>{{user.company.bs}}</li>
+  </ul>
+</div>
