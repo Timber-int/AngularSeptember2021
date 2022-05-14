@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {baseURL, urls} from '../config';
 import {Observable} from 'rxjs';
+
+import {baseURL, urls} from '../config';
 import { IPost } from '../models';
 
 @Injectable({
