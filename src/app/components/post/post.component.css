@@ -1,0 +1,13 @@
+.post_box {
+  width: 200px;
+  margin: 10px;
+  height: 120px;
+  overflow: hidden;
+  overflow-y: auto;
+  border-radius: 5px;
+  border: 1px solid #39445a;
+  padding: 5px;
+  font-size: 18px;
+  color: #39445a;
+  background-color: #c6ff00;
+}

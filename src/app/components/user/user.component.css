@@ -1,0 +1,22 @@
+.user_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  border: 1px solid #39445a;
+  font-size: 18px;
+}
+.user_box  div{
+  margin: 5px;
+}
+.details_link  {
+  border: 2px solid #2E94E3;
+  border-radius: 5px;
+  background: #39445a;
+  color: #ffffff;
+  text-decoration: none;
+}
+.details_link:hover {
+  color: #2E94E3;
+  cursor: pointer;
+}

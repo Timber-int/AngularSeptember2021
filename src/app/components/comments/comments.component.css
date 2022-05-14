@@ -1,0 +1,12 @@
+.comments_container {
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 400px;
+  overflow: hidden;
+  overflow-y: auto;
+  border: 1px solid #39445a;
+  border-radius: 5px;
+}
