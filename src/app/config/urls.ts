@@ -1,7 +1,7 @@
-export const baseURL = 'https://jsonplaceholder.typicode.com';
+export const baseURL = 'http://owu.linkpc.net/api/v3';
 
 export const urls = {
-  users: '/users',
-  posts: '/posts',
-  comments: '/comments',
+  auth: `/auth`,
+  users: `/users`,
+  cars: `/cars`,
 };

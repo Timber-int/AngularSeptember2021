@@ -1,0 +1,8 @@
+<div>
+  <form [formGroup]="form">
+    <div><label>UserName:<input type="text" formControlName="username"></label></div>
+    <div *ngIf="isPasswordTrue">{{isPasswordTrue}}</div>
+    <div><label>Password:<input type="text" formControlName="password"></label></div>
+    <div><button [disabled]="form.invalid" (click)="login()">Login</button></div>
+  </form>
+</div>
