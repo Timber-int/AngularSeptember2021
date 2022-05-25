@@ -6,7 +6,7 @@ import {LoginComponent} from './components/login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {LoginService} from './login-service';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {MainInterceptor} from '../../main.interceptor';
+import { MainInterceptor } from 'src/app/module/login/main.interceptor';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import {MainInterceptor} from '../../main.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       multi: true,
-      useClass: MainInterceptor,
+      useClass: MainInterceptor
     }
   ]
 })

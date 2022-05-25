@@ -3,15 +3,17 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor, HttpErrorResponse
 } from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {LoginService} from './module/login/login-service';
+import {catchError} from 'rxjs/operators';
+import {LoginService} from './login-service';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class MainInterceptor implements HttpInterceptor {
 
-  constructor(private loginService: LoginService) {
+  constructor(private loginService: LoginService, private router: Router) {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
@@ -23,8 +25,16 @@ export class MainInterceptor implements HttpInterceptor {
     if (isAuthenticated) {
       request = this.addToken(request, tokenFromLocalStorage);
     }
-
-    return next.handle(request);
+    console.log(request);
+    return next.handle(request).pipe(
+      // @ts-ignore
+      catchError((res: HttpErrorResponse) => {
+        if (res && res.error && res.status === 401) {
+          this.loginService.deleteToken();
+          this.router.navigate(['login']);
+        }
+      })
+    );
   }
 
   addToken(request: HttpRequest<any>, token: string): HttpRequest<any> {

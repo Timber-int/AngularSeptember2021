@@ -29,4 +29,8 @@ export class LoginService {
   isAuthorization(): boolean {
     return !!localStorage.getItem(this.accessTokenKey);
   }
+
+  deleteToken(): void {
+    localStorage.removeItem(this.accessTokenKey);
+  }
 }
