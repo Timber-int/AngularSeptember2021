@@ -4,8 +4,8 @@ import {CommonModule} from '@angular/common';
 import {RegisterRoutingModule} from './register-routing.module';
 import {RegisterComponent} from './components/register/register.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
 import {RegisterService} from './register-service';
+import {HttpModule} from '../../http.module';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import {RegisterService} from './register-service';
     CommonModule,
     RegisterRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpModule,
   ],
   providers: [
     RegisterService,

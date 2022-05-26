@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from '@angular/forms';
-import {RegisterService} from '../../register-service';
 import {Router} from '@angular/router';
+
+import {RegisterService} from '../../register-service';
 
 @Component({
   selector: 'app-register',
@@ -31,9 +32,10 @@ export class RegisterComponent implements OnInit {
   register(): void {
     const rawValue = this.form.getRawValue();
     delete rawValue.confirmPassword;
-    this.registerService.register(rawValue).subscribe(
-      () => this.router.navigate(['login']),
-      e => this.userNameError = e.error.username[0]
+    this.registerService.register(rawValue).subscribe({
+        next: () => this.router.navigate(['login']),
+        error: e => this.userNameError = e.error.username[0],
+      }
     );
   }
 

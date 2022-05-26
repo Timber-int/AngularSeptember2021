@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+
 import {LoginService} from '../../login-service';
 import {Router} from '@angular/router';
 
@@ -29,10 +30,9 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     const data = this.form.getRawValue();
-    this.loginService.login(data).subscribe(value => {
-      console.log(value);
-      this.loginService.setToken(value);
-      this.router.navigate(['cars']);
+    this.loginService.login(data).subscribe(token => {
+      this.loginService.setToken(token);
+      this.router.navigate(['cars']).then();
     }, e => this.isPasswordTrue = e.error.detail);
   }
 }

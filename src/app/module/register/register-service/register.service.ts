@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+
 import {IUser} from '../../../interfaces';
 import {Observable} from 'rxjs';
 import {baseURL, urls} from '../../../config';

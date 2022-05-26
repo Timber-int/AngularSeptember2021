@@ -5,6 +5,7 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import {Observable, of} from 'rxjs';
+
 import {ICar} from '../../../../interfaces';
 import {CarService} from '../car.service';
 

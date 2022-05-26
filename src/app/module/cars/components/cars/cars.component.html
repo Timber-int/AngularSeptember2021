@@ -1,1 +1,33 @@
-<p>cars works!</p>
+<div class="cars-form_container">
+    <form [formGroup]="form">
+      <div><label>Model:<input type="text" formControlName="model"></label></div>
+      <div><label>Price:<input type="number" formControlName="price"></label></div>
+      <div><label>Year:<input type="number" formControlName="year"></label></div>
+      <div>
+        <button (click)="createCar()">{{!carForUpdate ? 'Create' : 'Update'}}</button>
+      </div>
+    </form>
+</div>
+<hr>
+
+<div class="cars_container">
+  <div *ngFor="let car of cars">
+    <div class="car_box">
+      <div>Id: {{car.id}}</div>
+      <div>Model: {{car.model}}</div>
+      <div>Price: {{car.price}}</div>
+      <div>Year: {{car.year}}</div>
+      <div>
+        <button (click)="deleteCar(car.id)">Delete</button>
+      </div>
+      <div>
+        <button (click)="getCarBodyToUpdate(car)">Update</button>
+      </div>
+      <div><a [routerLink]="[car.id]" [state]="{data: car}">Information</a></div>
+    </div>
+  </div>
+</div>
+<hr>
+<div>
+  <router-outlet></router-outlet>
+</div>

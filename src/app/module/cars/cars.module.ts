@@ -3,19 +3,22 @@ import {CommonModule} from '@angular/common';
 
 import {CarsRoutingModule} from './cars-routing.module';
 import {CarsComponent} from './components/cars/cars.component';
-import {CarService} from './car-service';
-import {HttpClientModule} from '@angular/common/http';
-import {CarsResolver} from './car-service';
+import {CarService, CarsResolver} from './car-service';
+import {HttpModule} from '../../http.module';
+import {ReactiveFormsModule} from '@angular/forms';
+import { CarDetailsComponent } from './components/car-details/car-details/car-details.component';
 
 
 @NgModule({
   declarations: [
-    CarsComponent
+    CarsComponent,
+    CarDetailsComponent
   ],
   imports: [
     CommonModule,
     CarsRoutingModule,
-    HttpClientModule,
+    HttpModule,
+    ReactiveFormsModule,
   ],
   providers: [
     CarService,
