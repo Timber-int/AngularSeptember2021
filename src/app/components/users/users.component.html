@@ -1,0 +1,3 @@
+<div *ngFor="let user of users">
+  <app-user [user]=" user" (userEmitter)="catchUserEmit($event)"></app-user>
+</div>

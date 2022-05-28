@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {IPost, IUser} from './interface';
+import {PostService} from './service';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularSeptember2021';
 
+  user: IUser;
+  post: IPost
 
+  constructor(private  postService: PostService) {
+  postService.storage.subscribe(value => this.post =value)
+  }
 
-
-
+  catchUserEmit(user: IUser): void {
+    this.user = user;
+  }
 }
